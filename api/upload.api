@@ -1,0 +1,14 @@
+syntax = "v1"
+
+type UploadResponse {
+    FilePath string `json:"filePath"`
+    Code int `json:"code"`
+}
+
+@server(
+    jwt: Auth
+)
+service lol-api {
+    @handler UploadHandler
+    post /upload returns (UploadResponse)
+}

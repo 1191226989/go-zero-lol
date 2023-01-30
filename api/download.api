@@ -1,0 +1,14 @@
+syntax = "v1"
+
+type DownloadRequest {
+    File string `path:"file"`
+}
+
+@server(
+    jwt: Auth
+    middleware: CheckPath // 路由中间件声明
+)
+service lol-api {
+    @handler DownloadHandler
+    get /static/:file (DownloadRequest)
+}

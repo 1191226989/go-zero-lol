@@ -1,0 +1,11 @@
+Name: lol-api
+Host: 0.0.0.0
+Port: 8888
+
+Upload: 
+  Dir: static/ # 文件上传目录
+  Filename: myFile # 文件上传参数名称
+
+Auth:
+  AccessSecret: lol123456
+  AccessExpire: 86400

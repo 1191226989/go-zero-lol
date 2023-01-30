@@ -1,0 +1,20 @@
+syntax = "v1"
+
+type LoginRequest {
+    Username string `json:"username"`
+    Password string `json:"password"`
+}
+
+type LoginResponse {
+    Id           int64 `json:"id"`
+    Username     string `json:"username"`
+    AccessToken  string `json:"accessToken"`
+    AccessExpire int64 `json:"accessExpire"`
+    RefreshAfter int64 `json:"refreshAfter"`
+    Code         int64 `json:"code"`
+}
+
+service lol-api {
+    @handler LoginHandler
+    post /user/login (LoginRequest) returns (LoginResponse)
+}
